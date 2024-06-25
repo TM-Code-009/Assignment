@@ -1,7 +1,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcrypt";
-import staffData from "../register/[companyID]/route";
+import staffData from "../../../utils/model/staffmodel";
 import companyData from "@/app/utils/model/companymodel";
 import { dbConfig } from "@/app/utils/dbconfig";
 
