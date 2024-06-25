@@ -42,12 +42,14 @@ const page = () => {
             />
           </div>
 
+          <Link href="/">
           <button
             type="submit"
             className="w-full mt-8 h-[55px] flex items-center justify-center text-white bg-neutral-800 rounded-md"
           >
             Sign in
           </button>
+          </Link>
         </form>
 
         <div className="text-[12px] my-4 text-center  ">

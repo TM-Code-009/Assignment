@@ -1,10 +1,11 @@
+"use client"
+
 import { URL } from "../../../utils/constant";
 import { data } from "../../../utils/data";
 import Link from "next/link";
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa6";
-import axios from 'axios'
 
 const page = async ({ params }: any) => {
   const { reg } = params;
@@ -25,35 +26,25 @@ const page = async ({ params }: any) => {
   });
 
   const createAccount = async (data: FormData) => {
-    "use server";
+    // "use server";
     const companyName = data.get("companyName") as string;
     const email = data.get("email") as string;
     const password = data.get("password") as string;
-
-
-
-    try {
-      const response = await axios.post(`${URL}/api/register`, {
+     const newurl = "http://localhost:3000/api/register"
+    await fetch(newurl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
         companyName,
         email,
         password,
         plan,
         planCost: cost?.price === "Free" ? 0 : parseInt(cost?.price),
-      }, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-  
-      console.log('Response data:', response.data);
-      // Handle response data as needed
-  
-    } catch (error) {
-      console.error('Error fetching data:', error);
-      // Handle error as needed
-    }
+      }),
+    })
   };
-  
   return (
     <div className="flex w-full h-screen justify-center items-center">
       <div className="border rounded-md w-[500px] min-h-[300px] p-4 ">
@@ -102,7 +93,7 @@ const page = async ({ params }: any) => {
 
         <div className="text-[12px] my-4 text-center  ">
           Already have an Account{" "}
-          <Link href="/signin" className="italic font-semibold ">
+          <Link href="/Signin" className="italic font-semibold ">
             Sign in Here
           </Link>
         </div>
@@ -128,6 +119,6 @@ const page = async ({ params }: any) => {
       </div>
     </div>
   );
-}
+};
 
 export default page;
