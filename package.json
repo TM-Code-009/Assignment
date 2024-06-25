@@ -9,11 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/axios": "^0.14.0",
     "@types/bcrypt": "^5.0.2",
     "@types/bcryptjs": "^2.4.6",
     "@types/dotenv": "^8.2.0",
     "@types/next-auth": "^3.15.0",
     "@types/react-slick": "^0.23.13",
+    "axios": "^1.7.2",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^2.2.0",
     "dotenv": "^16.4.5",
