@@ -22,15 +22,15 @@ export const POST = async (req: NextRequest, { params }: any) => {
 
     console.log(companyDetail);
 
-    const salt = await bcrypt.genSalt(10);
-    const hashed = await bcrypt.hash(password, salt);
+    // const salt = await bcrypt.genSalt(10);
+    // const hashed = await bcrypt.hash(password, salt);
 
     if (companyDetail.plan === "Freemium") {
       if (companyDetail.staff.length < 3) {
         const staff = await staffData.create({
           role: "staff",
           email,
-          password: hashed,
+          password,//: //hashed,
           staffName,
         });
 

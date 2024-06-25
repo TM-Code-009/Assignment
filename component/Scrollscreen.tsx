@@ -50,7 +50,7 @@ const Scrollscreen = () => {
             prof: "Motion Artist",
             tools: ["VS Code", "NextJS", "Javascript"],
             image:
-              "https://cdn.dribbble.com/uploads/47180/original/1def7b9fb30832c4af4353b325d9c3af.mp4?1685645402",
+              "c:\Users\Ajebsanty\Pictures\Camera Roll\WIN_20240625_06_48_34_Pro.mp4",
           },
         {
             id: 2,
@@ -62,7 +62,7 @@ const Scrollscreen = () => {
           },
         {
             id: 3,
-            name: "Tarry",
+            name: "Fedora",
             prof: "Motion Artist",
             tools: ["VS Code", "NextJS", "Javascript"],
             image:
@@ -70,7 +70,7 @@ const Scrollscreen = () => {
           },
         {
             id: 4,
-            name: "Tarry",
+            name: "Rashedat",
             prof: "Motion Artist",
             tools: ["VS Code", "NextJS", "Javascript"],
             image:
@@ -78,7 +78,7 @@ const Scrollscreen = () => {
           },
         {
             id: 5,
-            name: "Tarry",
+            name: "Caleb",
             prof: "Motion Artist",
             tools: ["VS Code", "NextJS", "Javascript"],
             image:
@@ -86,7 +86,7 @@ const Scrollscreen = () => {
           },
         {
             id: 6,
-            name: "Tarry",
+            name: "Zakky",
             prof: "Motion Artist",
             tools: ["VS Code", "NextJS", "Javascript"],
             image:
@@ -94,7 +94,7 @@ const Scrollscreen = () => {
           },
         {
             id: 7,
-            name: "Tarry",
+            name: "David",
             prof: "Motion Artist",
             tools: ["VS Code", "NextJS", "Javascript"],
             image:
@@ -105,32 +105,43 @@ const Scrollscreen = () => {
      
       
       return (
-        <div className= "overflow-hidden">
-            <div className="slider-container w-[98%]">
+        <div className="overflow-hidden">
+        <div className="slider-container w-[99%] ">
           <Slider {...settings}>
-             {data?.map((props:any) => (
-                <div>
-                   <section className = "mx-2 h-[450px] overflow-hidden rounded-md relative">
-                    <video autoPlay loop muted src ={props.image} className='w-full h-fullbg-slate-300 object-cover'/>
-                    <div className='absolute w-full h-full top-0 opacity-90 bg-gradient-b from-transparent from-60% to-black'>
-                        <div className='text-white absolute bottom-0 p-4'>
-                           <p className='text-[18px] font-bold uppercase'>
-                            {props.name}("")
-                           </p>
-                           <p className='text-[12px]'>{props.prof}</p>
-
-                           <div className='flex flex-wrap w-full gap mt-4'>
-                                
-                           </div>
-                        </div>
+            {data?.map((props: any) => (
+              <div key={props.id}>
+                <section className=" mx-2 h-[450px] overflow-hidden rounded-md relative ">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    src={props?.image}
+                    className="w-full h-full bg-slate-200 object-cover"
+                  />
+                  <div className="absolute w-full h-full top-0 opacity-90 bg-gradient-to-b from-transparent from-60% to-black " />
+                  <div className=" text-white absolute bottom-0 p-4 ">
+                    <p className="text-[18px] font-bold uppercase">
+                      {props.name}{" "}
+                    </p>
+                    <p className=" text-[12px]">{props.prof} </p>
+  
+                    <div className="flex flex-wrap w-full gap-3 mt-4">
+                      {props.tools.map((el: string, i: number) => (
+                        <p
+                          key={i}
+                          className="border rounded-full px-4 py-2 text-[12px] font-semibold "
+                        >
+                          {el}
+                        </p>
+                      ))}
                     </div>
-                   </section> 
-                </div>
-               
-             ))}
+                  </div>
+                </section>
+              </div>
+            ))}
           </Slider>
         </div>
-        </div>
+      </div>
       );
     
 }

@@ -27,10 +27,10 @@ export const POST = async(req:NextRequest) => {
         const {companyname,email,password,plan,plancost} = await req.json()
         await dbConfig()
 
-        const salt = await bcrypt.genSalt(10);
-        const hashed = await bcrypt.hash(password, salt)
+        // const salt = await bcrypt.genSalt(10);
+        // const hashed = await bcrypt.hash(password, salt)
 
-        const create = await mycompanymodel.create({companyname,email,password:hashed,role:"owner",plan,plancost})
+        const create = await mycompanymodel.create({companyname,email,password,role:"owner",plan,plancost})
         return NextResponse.json({
             status: 201,
             message:"signup successfully",

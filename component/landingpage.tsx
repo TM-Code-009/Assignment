@@ -3,26 +3,27 @@ import  Header from "./Header";
 import Scrollscreen  from "./Scrollscreen"
 import { NextFont } from "next/dist/compiled/@next/font";
 
+
+
 const poppins: NextFont = Poppins({
   weight: "300",
   style: "normal",
   subsets: ["latin"],
 });
 
-const Landingpage = () => {
+const LandingPage = () => {
+  return (
+    <div className={poppins.className}>
+         <div>
+        <Header />
+        <div className="mt-20" />
+        <div>LandingPage</div>
 
-    //const poppins = Poppins({ weight:"300" ,style: "normal", subsets: ["latin"]})
-    return (
-      <div className={poppins.className}>
-        <div>
-          <Header />
-          <div className="mt-20" />
-          <div>LandingPage</div>
-  
-          <Scrollscreen />
-        </div>
+        <Scrollscreen />
       </div>
-    );
-  }
+    </div>
 
-  export default Landingpage
+  );
+};
+
+export default LandingPage;

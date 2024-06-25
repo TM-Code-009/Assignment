@@ -11,7 +11,7 @@ const page = () => {
       price: "Free",
       prof: "3 Staffs",
       benefits: ["VS Code", "NextJS", "Javascript"],
-      URL: "/register/freemium",
+      URL: "/Register/freemium",
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const page = () => {
       price: "500",
       prof: "10 Staffs",
       benefits: ["All Freemium", "VS Code", "NextJS", "Javascript"],
-      URL: "/register/starter",
+      URL: "/Register/starter",
     },
     {
       id: 3,
@@ -27,7 +27,7 @@ const page = () => {
       price: "1000",
       prof: "Unlimited",
       benefits: ["All Starter", "VS Code", "NextJS", "Javascript"],
-      URL: "/register/premium",
+      URL: "/Register/premium",
     },
   ];
 

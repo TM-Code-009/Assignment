@@ -1,13 +1,13 @@
-import Landingpage  from "@/component/landingpage";
+import React from "react";
+import LandingPage from "../component/landingpage";
+import ScrollScreen from "../component/Scrollscreen";
 
-
- const page=() => {
+const page = () => {
   return (
     <div>
-      <Landingpage/>
+      <LandingPage />
     </div>
   );
-}
-
+};
 
 export default page;

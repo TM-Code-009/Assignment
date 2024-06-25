@@ -1,6 +1,6 @@
 
 import { NextRequest, NextResponse } from "next/server";
-import bcrypt from "bcrypt";
+//import bcrypt from "bcrypt";
 import staffData from "../../../utils/model/staffmodel";
 import companyData from "@/app/utils/model/companymodel";
 import { dbConfig } from "@/app/utils/dbconfig";
@@ -20,7 +20,8 @@ export const POST = async (req: NextRequest) => {
     });
 
     if (company) {
-      const check = await bcrypt.compare(password, company.password);
+      //const check = await bcrypt.compare(password, company.password);
+      const check = password === company.password;
 
       if (check) {
         console.log("show me: ", check);
@@ -36,7 +37,8 @@ export const POST = async (req: NextRequest) => {
         });
       }
     } else if (staff) {
-      const checkStaff = await bcrypt.compare(password, staff.password);
+      //const checkStaff = await bcrypt.compare(password, staff.password);
+      const checkStaff = password === staff.password
       if (checkStaff) {
         return NextResponse.json({
           message: "staff sign in",
