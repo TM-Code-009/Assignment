@@ -1,5 +1,5 @@
 import { Schema, Types, model, models } from "mongoose";
-import { iStaffData } from "../interface.i";
+import { iStaffData } from "../../../../utils/interface.i";
 
 const staffModel = new Schema<iStaffData>(
   {

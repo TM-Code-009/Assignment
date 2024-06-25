@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter,Poppins } from "next/font/google";
 import "./globals.css";
-import { dbconfig } from "./utils/dbconfig";
+import { dbConfig } from "./utils/dbconfig";
 
 const inter = Inter({ subsets: ["latin"] });
 const poppins = Poppins({ weight:"300" ,style: "normal", subsets: ["latin"] });
@@ -16,7 +16,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  await dbconfig()
+  await dbConfig()
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>

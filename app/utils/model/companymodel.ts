@@ -1,35 +1,50 @@
 import { Schema, Types, model, models } from "mongoose";
 import { iCompanyData } from "../interface.i";
 
-const companymodel = new Schema<iCompanyData>({
-    companyname:{
-        type:String
+const companyModel = new Schema<iCompanyData>(
+  {
+    companyName: {
+      type: String,
     },
-    email:{
-        type:String
+    email: {
+      type: String,
+      unique: true,
     },
-    password:{
-        type:String
+    password: {
+      type: String,
     },
-    address:{
-        type:String
+    address: {
+      type: String,
     },
-    role:{
-        type:String
+    role: {
+      type: String,
     },
-    logo:{
-        type:String
+    logo: {
+      type: String,
     },
-    staff:[{
-        type:Types.ObjectId,
-        ref: "companies"
-    }],
-    projects:[{
-        type:Types.ObjectId,
-        ref: "Projects"
-    }],
-},{timestamps:true})
+    plan: {
+      type: String,
+    },
+    planCost: {
+      type: Number,
+    },
+    staff: [
+      {
+        type: Types.ObjectId,
+        ref: "Staffs",
+      },
+    ],
+    projects: [
+      {
+        type: Types.ObjectId,
+        ref: "Projects",
+      },
+    ],
+  },
+  { timestamps: true }
+);
 
-const mycompanymodel = models.Companies || model<iCompanyData>("Companies",companymodel)
+const companyData =
+  models.Companies || model<iCompanyData>("Companies", companyModel);
 
-export default mycompanymodel
+export default companyData;

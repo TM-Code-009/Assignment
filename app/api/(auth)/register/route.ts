@@ -1,4 +1,4 @@
-import { dbconfig } from "@/app/utils/dbconfig"
+import { dbConfig } from "@/app/utils/dbconfig"
 import mycompanymodel from "@/app/utils/model/companymodel"
 import { NextRequest, NextResponse } from "next/server"
 import bcrypt from "bcrypt"
@@ -6,7 +6,7 @@ import bcrypt from "bcrypt"
 export const GET = async() => {
     try{
         const find = await mycompanymodel.find()
-        await dbconfig()
+        await dbConfig()
         return NextResponse.json({
             status: 200,
             message:"companies retrived",
@@ -25,7 +25,7 @@ export const GET = async() => {
 export const POST = async(req:NextRequest) => {
     try{
         const {companyname,email,password,plan,plancost} = await req.json()
-        await dbconfig()
+        await dbConfig()
 
         const salt = await bcrypt.genSalt(10);
         const hashed = await bcrypt.hash(password, salt)
